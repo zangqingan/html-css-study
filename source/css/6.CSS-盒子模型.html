@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6.css盒子模型</title>
+    <style type="text/css">
+        /* 内边距 */
+        .box .pd{
+            background-color: darkturquoise;
+            width: 400px;
+            height: 200px;
+            /* padding: 10px; 这个是简写属性，一个值就是同时设置上右下左都一样 */
+            /* padding: 10px; */
+            /* 也可以分开方向写 padding-top/right/bottom/left */
+            padding-top: 100px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            border: 1px solid black;
+        }
+        /* 边框 */
+        .box .bd{
+            background-color: gold;
+            width: 600px;
+            height: 250px;
+            border: 5px solid red;
+            border-radius: 50px;
+        }
+        /* 外边距 */
+        .box .mg{
+            background-color: hotpink;
+            width: 800px;
+            height: 400px;
+            border: 5px solid black;
+            /* margin: 10px; 跟padding一样分四个方向取值 */
+            /* margin: 10px; */
+            /* 也可以分开方向写 margin-top/right/bottom/left */
+            margin-top: 100px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            box-shadow: 30px 50px 40px 10px aquamarine;
+            /* outline */
+            outline: 5px solid red;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>1.css盒子模型概述：</h3>
+        <p>
+            css盒子模型(box model )是指css在处理HTML网页时，会认为每一个html元素都是包含在一个肉眼不可见的盒子(一个矩形)里的，这样有利于网页的布局。<br>
+            这个盒子模型由四部分组成：<br>
+                内容区(content)，就是html的元素内容<br>
+                内边距(padding)，元素内容到边框的距离<br>
+                边框(border)，盒子的边距，它围成了一个盒子<br>
+                外边框(margin)，每个盒子之间的距离<br>
+            <img src="../../images/box-model.png" alt="">
+            <img src="../../images/box-model2.png" alt="">
+        </p>
+        <h3>2.css盒子模型相关的属性：</h3>
+        <h4>2.1 内容区</h4>
+        <div style="width: 400px; height: 200px;background-color: #0f0;">
+            内容区(content)<br>
+                width:200px;设置内容区的宽度
+                min-width，最小宽度。
+                max-width，最大宽度。<br>
+                height:200px;设置内容区的高度
+                min-height，最小高度。
+                max-height，最大高度。<br>
+        </div>
+        <h4>2.2 内边距(padding)，边框(border)，外边框(margin)，</h4>
+        <p>
+            对于这三个属性它们都有四个值分别是按照 上(top)，右(right)，下(bottom)，左(left)的顺时针顺序来设置的。
+            即padding/border/margin-top,padding/border/margin-right,padding/border/margin-bottom,padding/border/margin-left<br>
+            也可以缩写：padding/border/margin:值; 值的取法如下：<br>
+            四个值时：上 右 下 左<br>
+            三个值时：上 左右 下<br>
+            两个值时：上下 左右<br>
+            一个值时：上右下左一样<br>
+            注意：对于行内非替换元素：设置宽高无效，设置 margin-top 和 margin-bottom 属性也无效。
+            但是水平方向的border和padding都可以设置且会改变页面上可见框的大小占据布局空间，垂直方向也能设置但是不占据空间。
+        </p>
+        <div class="pd">  
+            <h5>为元素设置内边距相关的属性</h5>
+            <p>
+                在设置了内容区的宽高之后，设置元素的内边距会影响元素在页面的可见框大小。
+                因为w3c默认是content-box。
+            </p>
+        </div>
+        <br> <br> <br>
+        <div class="bd">  
+            <h5>为元素设置边框相关的属性</h5>
+            <p>
+                为元素设置边框必须指定三个样式：border-width：边框的宽度，border-color：边框的颜色，border-style：边框类型。
+                这三个都是 border-top/right/bottom/left-width/color/style 的缩写。但是三个样式又可以缩写成：border。
+                border:1px solid black ;一般都这样写，而且里面的书写顺序没有要求。
+                css3新增的圆角属性:border-radius也是四个方向上的缩写。
+                    border-top/bottom-left/right-radius:10px 20px;第一个是水平方向的圆半径，第二个是垂直方向上的圆半径(不设置时跟第一个一样。)
+                    使用缩写属性：border-radius:10px;设置一个值就行。
+            </p>
+        </div>
+        <div class="mg">  
+            <h5>为元素设置外边距相关的属性</h5>
+            <p>
+                每个盒子(即元素)之间的距离，设置值不会影响在页面上的可见框大小，但是会影响元素在页面上排放的位置。<br>
+                设置负值时往反方向移动。
+                在设置垂直外边距时，会有垂直外边距重叠的问题：
+                   1. 在网页的垂直方向上，相邻的元素之间(兄弟元素)同时设置 margin-top 和 margin-bottom 属性，这是浏览器会取最大值，而不是和。解决方法设置一个元素的值就好<br>
+                   2. 如果是父子元素垂直外边距相邻了，子元素设置的margin-top值会传递给父元素。
+                        解决方法：1.给父元素设置padding-top/padding-bottom，2.设置父元素的边框，
+                        3.触发BFC(block format content 块级格式化上下文)相当以一个结界：
+                        触发方法：浮动可以触发，设置元素的overflow属性为非visible也可以触发。
+            </p>
+        </div>
+        <h3>3.css的outline属性</h3>
+        <p>
+            outline属性表示元素的外轮廓(border的外面一点，属性跟border类似。)，有点像边框的边框但是它不占用空间而border是占据空间的会改变页面上元素的显示大小。
+            在调试时添加一个样式：div{outline:2px solid red !inportant;}可以快速知道别人的div布局。
+            也用它来取消a元素input元素的focus轮廓效果。
+        </p>
+        <h3>4.css的box-shadow属性</h3>
+        <p>
+            这个属性用来设置盒子的阴影(即盒子的影子)：无顺序要求，可以设置多个使用逗号隔开。
+                第一个值水平方向的偏移，正数往右偏移。
+                第二个值垂直方向的偏移，正数往下偏移。
+                第三个值阴影的模糊半径
+                第四个值阴影的延伸半径
+                第五个值 阴影的颜色，不写跟随color属性的值
+        </p>
+        <h3>5.css的box-sizing属性</h3>
+        <p>
+            这个属性用来设置盒子宽高的具体行为，w3c标准是content-box。
+            取值：<br>
+                box-sizing:content-box;默认值,内容盒子即设置宽高时是设置内容区(content)的大小，元素在页面上显示会被border和padding影响。<br>
+                <img src="../../images/content-box.png" alt=""><br>
+                box-sizing:border-box;这样设置宽高时就是内容区+内边距+边框。
+                <img src="../../images/border-box.png" alt="">
+        </p>
+        <h3>6.css的cursor属性</h3>
+        <p>
+            这个属性可以设置鼠标光标在HTML元素上时的显示样式，
+            值：<br>auto 浏览器根据上下文决定显示什么。<br>
+            default ;有操作系统决定一般都是小箭头。<br>
+            pointer;一只小手，鼠标放在超链接上默认都是这个。<br>
+            text; 一条竖线，鼠标放在文本上时默认的样式。<br>
+            <img src="../../images/cursor.png" alt="">
+        </p>
+        <h3>7.css的opacity属性</h3>
+        <p style="opacity: 0.5;">
+            这个属性可以设置元素在页面上显示的透明度，值0~1之间。0表示完全透明，1完全不透明，0.5半透明。ie8及以下不支持。
+        </p>
+        面试题：盒子水平垂直都居中的解决方法？
+        定位
+        display：flex;
+        js,获取屏幕的宽高clientwidth，获取元素的offsetwidth，设置元素的偏移量 = (clientwidth-offsetwidth)/2
+
+    </div>
+
+</body>
+</html>

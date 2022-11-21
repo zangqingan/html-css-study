@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-transition属性</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin: 100px auto 0;
+            transition: width 1s linear ;
+            
+        }
+        .box:hover{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>css动画过渡属性transition,对元素某个其它css属性进行设置</h3>
+        <p>
+            transiton属性是一个缩写属性：无顺序要求可选。
+                transition-property:指定过渡属性名称 ;
+                transition-duration:过渡动画所需时间 ;
+                transition-timing-function: 动画的过渡曲线;
+                transition-delay: 动画执行之前的等待时间;
+        </p>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

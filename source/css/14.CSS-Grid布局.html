@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css-grid布局</title>
+    <style>
+       .gridbox{
+           display: grid;
+           text-align: center;
+           width: 800px;
+           height: 700px;
+           border: 1px black solid;
+           grid-template-columns: 200px 200px 200px;
+           grid-template-rows: 30px 30px 30px;
+           column-gap: 20px;
+           row-gap: 30px;
+           align-items: end;
+           justify-items: start;
+           justify-content: center;
+           align-content:center;
+
+       }
+       .gridbox div{
+           background-color: aqua;
+       }
+       
+    </style>
+</head>
+<body>
+   <div class="">
+       <h3>1.css-grid布局概述</h3>
+       <p>
+            网格布局（Grid）是最强大的 CSS 布局方案。它将网页划分成一个个网格，可以任意组合不同的网格，做出各种各样的布局。
+            Grid 布局与 Flex 布局有一定的相似性，都可以指定容器内部多个项目的位置。但是，它们也存在重大区别。
+            Flex 布局是轴线布局，只能指定"项目"针对轴线的位置，可以看作是一维布局。
+            Grid 布局则是将容器划分成"行"和"列"，产生单元格，然后指定"项目所在"的单元格，可以看作是二维布局。
+            Grid 布局远比 Flex 布局强大，和flex布局类似，采用网格布局的区域，称为"容器"（container）。容器内部采用网格定位的子元素，称为"项目"（item）。
+            注意：项目只能是容器的顶层子元素，不包含项目的子元素，即孙子元素不包括。
+            容器里面的水平区域称为"行"（row），垂直区域称为"列"（column）。
+            行和列的交叉区域，称为"单元格"（cell），正常情况下，n行和m列会产生n x m个单元格。
+            划分网格的线，称为"网格线"（grid line）。水平网格线划分出行，垂直网格线划分出列。
+            正常情况下，n行有n + 1根水平网格线，m列有m + 1根垂直网格线，
+       </p>
+       <h3>2.grid布局的属性</h3>
+       <div>
+            Grid 布局的属性分成两类：
+                一类定义在容器上面，称为容器属性；
+                另一类定义在项目上面，称为项目属性。
+            <strong>1.容器属性</strong>
+            <p>
+                display: grid 指定一个容器采用网格布局。
+                注意，设为网格布局以后，容器子元素（项目）的
+                    float、
+                    display: inline-block、
+                    display: table-cell、
+                    vertical-align和column-*等设置都将失效。
+
+                容器指定了网格布局以后，接着就要划分行和列。
+                    grid-template-columns属性定义每一列的列宽，
+                    grid-template-rows属性定义每一行的行高。
+
+                    fr关键字（fraction 的缩写，意为"片段"）表示比例关系
+                    如果两列的宽度分别为1fr和2fr，就表示后者是前者的两倍。
+            </p>
+       </div>
+   </div>
+ 
+   <hr>
+   <div class="gridbox">
+       <div href="#">1</div>
+       <div href="#">2</div>
+       <div href="#">3</div>
+       <div href="#">4</div>
+       <div href="#">5</div>
+       <div href="#">6</a>
+   </div>
+</body>
+</html>

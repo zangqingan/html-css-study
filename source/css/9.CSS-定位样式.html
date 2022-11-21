@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>9.css定位样式</title>
+    <style type="text/css">
+        /* reset */
+        body{
+            
+        }
+        div,ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .aside{
+            position: fixed;
+            top: 50px;
+            right: 10px;
+            box-shadow: 0 0 2px black;
+        }
+        .aside .list li{
+
+            background-color:#fff;
+            width: 38px;
+            height: 38px;
+            line-height: 19px;
+            font-size: 14px;
+            padding: 10px;
+            text-align: center;
+        }
+        .aside .list li:hover{
+            background-color: violet;
+           
+        }
+    
+        .aside .list  span{
+            line-height: 19px;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>标准文档流(normal flow)</h3>
+        <p>
+            在html页面中元素默认都是在文档流中排列的，即以浏览器页面的左上角为原点从左往右，从上往下排列。
+            块级元素在文档流中独占一行从上往下排列(垂直排列)，宽度默认父元素的100%，高度内容撑开。
+            行内级元素从左往右排列(水平排列)满一行换到下一行继续从左到右，宽高由内容撑开。
+        </p>
+
+        <h3>css定位属性position</h3>
+        <p>
+                定位：指将指定的元素摆放到页面中(文档流)的任意位置，是比浮动更加强大的一种页面布局方式，当一个div要盖到另一个时就需要开启定位。
+            通过设置元素的position属性来设置
+            position:static(默认)；即即没有开启定位
+                    :relative；开启元素的相对定位
+                    :absolute；开启元素的绝对定位
+                    :fixed；开启元素的固定定位(本质也是一种绝对定位)
+            开启了定位(即position属性值不是static以外的值)就可以设置偏移量，偏移量是相对于元素的定位位置进行偏移的。left top right bottom四个值。<br>
+        </p>
+        <h4>相对定位:relative</h4>
+        <p>
+            :relative；开启后元素不会脱离文档流(空间依然占据且还是按照文档流的方式排列)也不改变元素的性质(块还是块，行内还是行内)，但是开启元素提升一个层级(能覆盖文档流中的元素)。
+            设置偏移量后相对于元素没开启定位时在文档流中的位置进行偏移。不设置偏移量元素位置不发生任何变化。
+        </p>
+        <h4>绝对定位:absolute</h4>
+        <p>
+            :absolute；开启后元素脱离文档流(不占空间,它后面的元素还是按照文档流排列)，元素提升一个层级。
+            会改变元素的性质：
+                行内级，行内块都变为块级元素，可以设置宽高，不设置由内容撑开。
+                块的宽高默认为由内容撑开
+            设置偏移量后相对于离它最近的开启了定位(即position不为static的)的父元素位置进行偏移，如果都没有最终相对于浏览器窗口。不设置偏移量元素位置不发生任何变化。
+            所以一般子元素开启绝对定位，父元素开启相对定位。就可以相对父元素进行偏移了。    
+        </p>
+        <h4>固定定位:fixed</h4>
+        <p>
+            :fixed；开启固定定位(本质也是一种绝对定位)和绝对定位特点基本一样，只是永远相对于浏览器窗口(视口)进行偏移。
+            它会固定在浏览器窗口的某个位置，不会随滚动条滚动。ie6不支持。
+            视口：浏览器打开的窗口。
+            画布：浏览器整个渲染的网页
+        </p>
+        <h3>css元素的层级问题</h3>
+        <p>
+            开启定位的元素就可以设置z-index属性，它表示开启定位元素的层级问题(谁覆盖谁)，层级越高越优先显示。
+            z-index：整数；属性只对开启了定位的元素可以设置，没开启设置无效。定位元素层级一样，后面的覆盖前面的。
+            开启定位的元素>开启浮动元素>文档流元素
+        </p>
+        <!-- 固定定位侧边栏练习 -->
+        <div class="aside">
+            <ul class="list">
+                <li><a href="#"><span>京东秒杀</span></a></li>
+                <li><a href="#"><span>特色优选</span></a></li>
+                <li><a href="#"><span>频道广场</span></a></li>
+                <li><a href="#"><span>为你推荐</span></a></li>
+                <li><a href="#"><span>联系客服</span></a></li>
+                <li><a href="#"><span>建议反馈</span></a></li>
+                <li><a href="#"><span>回到顶部</span></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

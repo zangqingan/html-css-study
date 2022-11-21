@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-transform</title>
+    <style>
+        .container .box{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        .container .tbox:hover{
+            transform: translate(20px,15px);
+        }
+        .container .rbox:hover{
+            transform: rotate(45deg);
+        }
+        .container .sbox:hover{
+            transform: scale(0.5);
+        }
+        .container .kbox:hover{
+            transform: skew(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>css的transform(形变)属性</h3>
+        <p>
+            transform属性允许平移，旋转，缩放，倾斜指定的元素。常见的函数有四个<br>
+                translate(x,y),元素往x轴和y轴平移设置的大小，百分比值时相对自己本身大小<br>
+                rotate(deg),元素旋转多少deg(度degree)，正数顺时针，负数逆时针<br>
+                scale(x,y),元素往x轴和y轴缩放,一个值x和y轴相同的缩放，1保持不变，2放大一倍，0.5缩小一半。 <br>
+                skew(deg,deg),元素往x轴和y轴倾斜,正数顺时针，负数逆时针<br>
+        </p>
+        <h4> translate(x,y),平移元素</h4>
+        <div class="box tbox"></div>
+
+        <h4>rotate(deg),旋转元素</h4>
+        <div class="box rbox">哈哈哈</div>
+
+        <h4>scale(x,y),缩放</h4>
+        <div class="box sbox"></div>
+
+        <h4>skew(deg,deg),倾斜</h4>
+        <div class="box kbox">呵呵呵</div>
+        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.HTML5多媒体元素video</title>
+</head>
+<body>
+    <h3>1.video标签</h3>
+    <p>
+        video一个块级元素用于在HTML文档嵌入媒体播放器,可以通过source子元素放置多个视频格式。
+        如果浏览器支持加载的视频格式，就会显示一个播放器，否则显示video内部的子元素。
+        常用属性：
+            src视频地址,
+            width：视频播放器的宽度，单位像素。
+            height：视频播放器的高度，单位像素。
+            controls浏览器添加控制栏,
+            autoplay自动播放,
+            loop循环播放,
+            muted静音,
+            poster：视频播放器的封面图片的 URL。
+        视频格式：MP4/avi等
+    </p>
+    <video controls autoplay loop muted style="width:400; height:400">
+       <source src="D:\Program(×86)\BaiduNetdiskDownload\慕课-Node.js 从零开发 web server博客项目 前端晋升全栈工程师必备 一站式掌握 Node.js+Express+Koa2\第1章 课程介绍\1-1 课程导读.mp4" type="video/mp4">
+    </video>
+</body>
+</html>

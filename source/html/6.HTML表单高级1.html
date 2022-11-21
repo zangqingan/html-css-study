@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--这个meta是移动端页面的显示比例  -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!--这个meta是告诉ie浏览器怎么渲染页面的  -->
+    <title>6.HTML表单高级1</title>
+</head>
+<body>
+    <h3>1.html表单：</h3>
+    <p>
+        表单元素form表示了文档中的一个区域即表单域，此区域包含有交互控制元件（controls）。<br>
+        常见如下图：<br>
+         <img src="../../images/form.png" alt="html表单"><br>
+        表单是用来收集用户信息并发送给 Web 服务器保存信息(即把用户在表单中输入的内容提交到服务器并保存)。<br>
+        使用form元素定义一个表单，它本身是不可见的起一个容器的作用，作用是告诉浏览器这是一个表单。<br>
+        form元素里面由各种表单控件组成如下所示：<br>
+        &lt;form&gt;
+            各种表单控件
+        &lt;/form&gt;<br>
+        form元素常见属性：<br>
+            action="服务器地址"，点击提交按钮(submit)时就会提交数据到指定的服务器地址。缺点：点击提交后会跳转页面，这就要求服务器要写好一个页面并返回给前端(即服务端渲染)。<br>
+            前后端分离后：通过js的formdata对象先获取所有的表单数据，再通过正则表达式进行简单验证，再发送ajax请求，将数据发送给服务器，服务器验证成功后会返回数据，这是前端要自己解析并显示(即前端渲染和前端路由)。<br>
+            method="get/post" ，提交数据的方式。
+                get(默认)，将请求数据在url后面以?query传给服务器，参数之间用&符号连接。限制，浏览器和服务器对url的长度是有限制的，一般不超过1kb。
+                post，将数据全部放到请求体中，对数据大小没有限制。
+            target属性，url网址打开的位置跟a元素的target属性一样。<br>
+            enctype(encode type 编码类型)，规定提交的表单数据的编码类型。
+            有三种：<br>
+            enctype="application/x-www-form-urlencoded" 默认。<br>
+            enctype="multipart/form-data" 文件上传时必须使用这个，且method为post。<br>
+            enctype="text/plain" html5<br>
+    </p>   
+    <h3>2.表单元素form常见的子元素：</h3>  
+    <h5>2.1 input，label</h5>
+    <p>
+        input它是一个行内替换元素和img元素一样，用来接收用户的输入。
+        可以实现输入框，单选框，多选框，按钮等元素，通过修改它的type属性即可实现。<br>
+        label行内元素提供控件的文字说明，说明对应控件的目的是什么。
+        通过设置它的for属性可以在鼠标点在文字上时对应id名的input元素上时自动获取输入框的焦点，表示input的标题。<br>
+        语法：
+        &lt;label for="uname"&gt;用户名&lt;/label&gt;<br>
+        &lt;input type="类型" name="名称" id="uname" placeholder="请输入用户名"&gt;。<br>
+        type类型取值有：
+            文本框：text
+            密码框：password
+            文件域：file
+            单选按钮：radio，name属性相同才具有单选的功能。
+            多选按钮：checkbox
+            按钮：button <br>
+        input元素的其它常用属性:
+            maxlength="整数" ，最大输入长度。
+            placeholder="输入框提示文字"，在输入框上显示提示文字。
+            readonly="readonly",属性名和值一样时简写，readonly只读。
+            disabled="disabled"&lt;=&gt;disabled 禁用。
+            checked="checked" &lt;=&gt;checked 设置默认选中的选项。
+            name="提交给服务器的key名"，提交数据时用来区分数据类型。
+            value="值"，传给服务器的值，对于输入框即使用户输入的，对于单选框，多选框则要自己定义一个。
+            outline:none; 去掉tab选中时的外边框，在重置样式时使用。
+    </p>
+    <h5>2.2 select 下拉框,</h5>
+    <p>
+        select和form一样就是告诉浏览器我是谁，具体的下拉选项由option元素构成，在提交数据时是提交option元素的value属性。
+        语法：<br>
+        &lt;select name="" id=""&gt;
+            &lt;option value=""&gt;选项一&lt;/option&gt;
+            &lt;option value=""&gt;选项二&lt;/option&gt;
+            &lt;option value=""&gt;选项三&lt;/option&gt;
+        &lt;/select&gt;<br>
+        select常用属性：
+            multiple 允许多选。
+            disabled：布尔属性，是否禁用当前控件。
+        option常用属性：
+            value 提交到服务器的值。
+            selected 默认选中的选项。
+    </p>
+    <h5>2.3 button 按钮,</h5>
+    <p>
+        使用button元素或者声明input元素type属性为button，都可以实现按钮。
+        内部不仅放置文字，还可以放置图像，这可以形成图像按钮。
+        使用input时使用value属性设置按钮的文字
+            input type="button" ，是一个普通按钮。
+            input type="reset" (不写value默认就是 重置)，重置所属form元素的所有表单元素，叫重置按钮。
+            input type="submit" 提交表单所有的数据给服务器，服务器地址由form元素的action属性指定，叫提交按钮。
+        使用button元素
+            button type="button" ，普通按钮
+            button type="reset" ，设置为重置按钮
+            button type="submit" 默认就是提交按钮
+        常见属性：
+        autofocus：布尔属性，表示网页加载时，焦点就在这个按钮。网页里面只能有一个元素，具有这个属性。
+        disabled：布尔属性，表示按钮不可用，会导致按钮变灰，不可点击。
+        name：按钮的名称（与value属性配合使用），将以name=value的形式，随表单一起提交到服务器。
+        value：按钮的值（与name属性配合使用），将以name=value的形式，随表单一起提交到服务器。
+        type：按钮的类型，可能的值有三种：submit（点击后将数据提交给服务器），reset（将所有控件的值重置为初始值），button（没有默认行为，由脚本指定按钮的行为）。
+    </p>
+    <h5>2.4 textarea 文本域,</h5>
+    <p>
+        块级元素，用来生成多行的文本框。即一个多行输入的输入框。
+        常见属性有：
+            cols-列数，
+            rows-行数，
+            resize:none;也是重置样式，不能修改输入框大小。
+            required：布尔属性，控件是否为必填。
+    </p>
+    <h5>2.5 fieldset，legend元素为表单项进行分组和分组的标题。</h5>
+    <p>
+        fieldset标签是一个块级容器标签，表示控件的集合，用于将一组相关控件组合成一组，效果就是会有一个方框围起来。
+        legend标签用来设置fieldset控件组的标题，通常是fieldset内部的第一个元素，会嵌入显示在控件组的上边框里面。
+    </p>
+    <hr>
+    <h3 style="text-align: center;">综合练习</h3>
+    <!-- 声明一个表单 -->
+    <form>
+        <fieldset>
+            <legend>必填信息</legend>
+            <label for="uname">用户名</label>
+            <input type="text" name="username" id="uname" placeholder="请输入用户名"><br>
+            <label for="password">密码</label>
+            <input type="password" name="pwd" id="password" placeholder="请输入用户密码"><br>
+            <label for="checkword">验证码</label>
+            <input type="text" name="" id="checkword" placeholder="请输入验证码">
+            <input type="button" name="" id="" value="获取验证码">
+        </fieldset>
+        <fieldset>
+            <legend>选填信息</legend>
+            <label for="fileupload">上传照片</label>
+            <input type="file" name="" id="fileupload"><br>
+            性别：
+            <label for="male">男</label>
+            <input type="radio" name="gender" id="male">
+            <label for="female">女</label>
+            <input type="radio" name="gender" id="female"><br>
+            爱好：
+            <label for="lanqiu">篮球</label>
+            <input type="checkbox" name="hobbies" id="lanqiu">
+            <label for="pingpong">乒乓球</label>
+            <input type="checkbox" name="hobbies" id="pingpong">
+            <label for="paiqiu">排球</label>
+            <input type="checkbox" name="hobbies" id="paiqiu">
+            <label for="yumao">羽毛球</label>
+            <input type="checkbox" name="hobbies" id="yumao"><br>
+            籍贯：
+            <select name="wp" id="province">
+                <option value="gx">广西省</option>
+                <option value="gd">广东省</option>
+                <option value="zj">浙江省</option>
+                <option value="hn">湖南省</option>
+                <option value="sc">四川省</option>
+            </select><br>
+            <label for="profile">简介</label>
+            <textarea name="" id="profizjle" cols="30" rows="10"></textarea><br>
+        </fieldset>
+        <input type="reset" value="重置">
+        <input type="button" value="提交">
+    </form>
+</body>
+</html>

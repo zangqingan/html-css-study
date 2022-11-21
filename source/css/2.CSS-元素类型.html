@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.css元素类型</title>
+    <style>
+        /* reset */
+        *{
+            margin: 0; 
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+
+        }
+        /* box */
+        #box{ width: 200px;}
+        #box:hover ul{ display: block;}
+        #box .wether{
+            display: none;
+            text-align: center;
+        }
+        #box ul li a{ display: block;}
+        #box ul li:hover{ background-color: cornflowerblue;}
+
+        /* nav */
+        .nav{
+            background-color: #424242;
+            width: 300px;
+
+        }
+        .nav ul li a{
+            color: cornsilk;
+        }
+        .nav ul li:hover{
+            background-color: darkgoldenrod;
+        }
+
+        /* page */
+        .page ul li{
+            display: inline-block;
+
+        }
+        .page ul li a{
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            border: 1px solid #e1e2e3;
+            color: rgb(95, 135, 190);
+            text-align: center;
+            font-size: 14px;
+            line-height: 34px;
+            margin-right: 5px;
+
+        }
+        .page ul li a:hover{ 
+            border: 1px solid #38f;
+            background-color: rgb(248, 237, 237);
+ 
+        }
+        .page .prev ,.page .next {
+            width: 80px;
+
+
+        }
+        .page .active {
+            border:none;
+            font-weight: 700;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            color: #000;
+        }
+        .page .active:hover {
+            border:none;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h3>1.css元素的显示模式</h3>
+    <p>
+            在HTML中已经知道html标签就等价于html元素，而根据元素的显示模式(即能不能在同一行上显示)可以将HTML元素分为两大类。
+        块级元素(block-level elements)
+            特点：独占它所属父元素的一行，宽高内外边距都可以设置，宽度默认是它所属父元素的100%，高度由内容撑开。
+            可以当成一个矩形容器里面嵌套其它行内或块级元素(注意p元素和h1~h6元素不能放其它块元素)。如：div，h1~h6，p，ul，ol，dl，li，dt，dd，table，form，article，aside，footer，header，nav等。<br>
+        行内级元素(inline-level elements)，也叫内联元素。
+            特点：多个行内级元素可以在它们所属父元素的一行上显示，宽高设置无效(img，input，video，audio，canvas等设置宽高有效)，宽高默认就是内容的宽高。
+            只能嵌套其它行内级元素或文本内容(a元素可以嵌套任意元素除了本身)。如：span，img，a，strong，em，b，i，label，canvas，input，button，video，audio等。
+        <img src="../../images/elements.png" alt="">
+    </p>
+    <h3>2.修改css元素的显示模式</h3>
+    <p>
+        通过修改css的display属性可以修改css元素的显示模式。<br>
+        display有4个常用值<br>
+            block 让元素显示为块级元素<br>
+            inline 让元素显示为行内级元素<br>
+            none 隐藏元素，不占据空间<br>
+            inline-block 让元素同时具有块级元素和行内级元素的特点。
+            可以设置宽高可以同一行显示。宽高由内容撑开。
+            让a span 能设置宽高，让div，p等能和别人在同一行。<br>
+            <img src="../../images/display.png" alt=""><br>
+        还有以下的一些取值不过用的比较少，效果等同于某些HTML元素<br>
+            table table元素 一个block-level表格<br>
+            inline-table table元素 一个inline-level表格<br>
+            table-row tr元素<br>
+            list-item li元素<br>
+    </p>
+    <h3 style="text-align: center;">3.css元素显示模式练习：</h3>
+    <br><br><br><br>
+    <p>新闻</p>
+    <div id="box">
+        <h4 style="background-color: cornflowerblue;">新闻列表</h4>
+        <ul class="wether">
+            <li><a href="#">昨天下雨</a></li>
+            <li><a href="#">今天阴天</a></li>
+            <li><a href="#">明天有风</a></li>
+            <li><a href="#">后天晴天</a></li>
+        </ul>
+    </div>
+    <br><br><br><br><br>
+    <p>小米导航栏</p>
+    <div class="nav">
+        <ul>
+            <li><a href="">手机 电话卡</a></li>
+            <li><a href="">电视 盒子</a></li>
+            <li><a href="">笔记本 显示器 平板</a></li>
+            <li><a href="">家电 插线板</a></li>
+        </ul>
+    </div>
+    <br><br><br><br><br>
+    <p>分页列表</p>
+    <div class="page">
+        <ul>
+            <li><a href="" class="prev">&lt; 上一页</a></li>
+            <li><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a class="active">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href="">5</a></li>
+            <li><a href="">6</a></li>
+            <li><a href="">7</a></li>
+            <li><a href="">8</a></li>
+            <li><a href="">9</a></li>
+            <li><a href="">10</a></li>
+            <li><a href="" class="next">下一页 &gt;</a></li>
+        </ul>
+    </div>
+    <br><br><br><br><br>
+    <h3>4.css-visibility属性</h3>
+    <p>
+        css还有一个属性是用来设置元素可见性的：visibility。<br>
+        display:none;也是实现元素的隐藏，且元素在页面中不占有位置(物理空间)。<br>
+        visibility:visible;//元素可见(默认)<br>
+        visibility:hidden;//元素隐藏，视觉上的不可见，但是在页面中依然占有位置。<br>
+    </p>
+    <div style="visibility: hidden;width: 200px;height: 200px;background-color: red;">我设置了visibility</div>
+    <p>上面的div设置了visibility，内容不见了但是位置还占着。</p>
+    <h3>5.css-overflow属性</h3>
+    <p>
+        在css中子元素默认是存在父元素的内容区中的，理论上是不能大于父元素的内容区大小的。
+        如果超出了则称超出部分为溢出内容，父元素默认是把溢出内容直接显示在父元素外面的。
+        通过css的overflow属性可以控制父元素如何处理溢出内容的。<br>
+        overflow:visible;默认值即直接在父元素外面显示。
+                hidden;溢出内容隐藏不显示。
+                scroll;为父元素添加滚动条，在父元素内容区显示。
+                auto;有溢出内容自动添加水平/垂直滚动条，没有正常显示。
+    </p>
+    <br><br><br><br><br>
+</body>
+</html>

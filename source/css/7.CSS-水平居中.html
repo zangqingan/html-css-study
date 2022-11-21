@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.css水平居中</title>
+    <style>
+        .content{
+            background-color: red;
+            color: azure;
+        }
+        .block{
+            background-color:green;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h3>css对html各种元素的水平居中方法</h3>
+    <div class="content"> 
+        <p>
+            对于普通文本，行内元素，行内替换元素(img，input等)，行内块级元素，父元素设置text-align:center;都能实现水平居中。
+            而对于块级元素，则要自己定义margin:0 auto;属性就可以实现居中。
+            原理：上下margin默认值都是零，左右margin值为auto时浏览器会把剩余空间平分给左右外边距也就实现了居中显示了。
+        </p>
+        <div class="block">块级元素居中自己定义属性css,margin:0 auto;</div>
+
+    </div>
+</body>
+</html>

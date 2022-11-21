@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.html列表元素</title>
+    <style>
+        /* 列表常见属性 */
+        ul{
+            /* list-style-type: square;设置li元素前面标志的样式，一般设为none然后自定义样式的 */
+            list-style-type: square;
+            /* list-style-image: ;设置一张图片为li元素前面的标记，会覆盖list-style-type的值。一般也不用*/
+            list-style-image: url();
+            /* list-style-position: inside/outside;设置li元素前面的标记算不算进内容里。也不常用。 */
+            list-style-position: inside;
+            /* list-style: none url() inside; 是上面三个属性的缩写无顺序要求 。最常用就是下面的缩写写法，直接去除默认样式然后自己重新写。*/
+            list-style: none;
+        }
+        ol{
+            /* list-style-type: none; */
+        }
+        dl{
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="list">
+        <h3>1. html列表分类:</h3>
+        <p>
+            html列表是一系列排列好的项目有三种，它们都是块元素。
+            也是经常使用的，一般要浮动或是flex，一般看到导航什么的基本都用这个。
+            1.无序列表ul,li，列表项前面没有编号，只有一个列表符号，默认是一个圆点。
+            2.有序列表ol,li，每个列表项前面有编号，呈现出顺序
+            3.自定义列表dl，dt，dd。
+            注意：
+                ul，ol，dl的直接子元素只能li，dt，dd。
+                ul,ol,dl就是一个父级元素用来包含里面的li，dt，dd告诉浏览器我是列表。
+                li，dt，dd和div一样就是一个块级容器，可以嵌套其它任意元素如：a，p，div，ul，ol等等。
+            可以通过设置ul，ol，dl元素的type属性改变前面的序号类型， 但是一般都是通过设置css属性list-style-type来实现的。
+            如:对于ul设置
+                type="disc" 默认实心原点
+                type="square" 方块实心
+                type="circle" 空心圆<br>       
+            <img src="../../images/list.png" alt="">
+        </p>
+        <h4>1.无序列表</h4>
+        <p>
+            无序列表ul(unordered list),直接子元素只能是li(list item)即列表中的每一项。
+        </p>
+        <ul>
+            <li>无序</li>
+            <li>无序</li>
+            <li>无序</li>
+        </ul>
+        <h4>2.有序列表</h4>
+        <p>
+            有序列表ol(ordered list),直接子元素只能是li(list item)即列表中的每一项。
+        </p>
+        <ol>
+            <li>有序</li>
+            <li>有序</li>
+            <li>有序</li>
+        </ol>
+        <h4>3.自定义列表</h4>
+        <p>
+            自定义列表dl(definition list),直接子元素只能是dt(definition term)即列表中的标题，dd(definition description)即列表中的每一项。
+        </p>
+        <dl>
+            <dt>自定义列表标题1</dt>
+            <dd>自定义列表内容</dd>
+            <dt>自定义列表标题2</dt>
+            <dd>自定义列表内容</dd>
+        </dl>
+    </div>
+    <hr>
+    <h3>2. 列表练习</h3>
+</body>
+</html>

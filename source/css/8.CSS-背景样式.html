@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.css背景样式</title>
+    <style>
+        /* reset */
+        ul li p h5 {
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .content .box{
+            width: 400px;
+            height: 500px;
+            background-color: blue;
+            background-image: url("../../images/logo.png");
+            background-repeat: no-repeat;
+            background-size: auto;
+            background-position: 20px 0;
+        }
+        .sprite{
+            width: 1200px;
+            margin: 0 auto;
+            height: 200px;
+        }   
+        .sprite .item{
+            float: left;
+            width: 250px;
+
+        }
+        .content .sprite .itembox{
+            position: relative;
+            width: 180px;
+            padding-left: 50px;
+
+        }
+        .content .sprite .itembox h5{
+            position: absolute;
+            width: 36px;
+            height: 42px;
+            top: 2px;
+            left: 10px; 
+            text-indent: -999px;
+            background-color: #fff;
+            background-image: url("../../images/jd-sprite.png");
+            background-repeat: no-repeat;
+
+
+        }
+        .sprite .itembox .duo{
+            background-position: 0 -192px;
+
+        }
+        .sprite .itembox .kuai{
+            background-position: -41px -192px;
+
+        }
+        .sprite .itembox .hao{
+            background-position: -82px -192px;
+
+        }
+        .sprite .itembox .sheng{
+            background-position: -123px -192px;
+
+        }
+        
+        .sprite ul li p{
+            height: 42px;
+            line-height: 42px;
+            font-weight: 700;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h3>1.css和背景相关的属性</h3>
+        <div class="box">
+            常见属性：
+            background-color: #fff;设置元素的背景(前景色)颜色。
+            background-image: url("路径地址");用来设置元素的背景图片，图片较大只显示左上角，一样大全部显示，小了则会默认平铺充满整个元素，元素没设置宽高显示不出来的。<br>
+            background-repeat: no-repeat;设置背景图片小于元素时如何显示，默认repeat平铺充满元素，no-repeat不平铺只显示一张，repeat-x水平方向平铺，repeat-y垂直方向平铺。
+            background-size: auto;设置背景图片的大小，auto就是以原始图大小显示。cover拉伸图片覆盖元素。或者具体值。
+            background-position: 0 0;第一个值水平方向 left，center，right，第二个值垂直方向top center bottom。只设置一个另一个默认为center。
+            background-attachment: fixed;用来设置背景图片是否随着浏览器窗口滚动。fixed固定，scroll滚动默认值
+            background:url() color no-repeat 0 0;缩写属性，没有顺序要求，也没有数量要求。不写就使用默认值。<br>
+            <span>background-image和img元素的区别：</span><p>
+                background-image是一个css的属性
+                img是一个HTML元素
+                <!-- <img src="../../images/bc-img.png" alt=""><br> -->
+            </p>
+        </div>
+        <h3>2.css-sprite精灵图</h3>
+        <p>
+            css-sprite是一种css图像合成技术，将各种小图片合并到一张图里，然后利用css的background-position属性来定位想要的那个小图片。
+            好处：减少网页的http请求次数，加快网页响应的速度，减少服务器的压力,减少图片的总大小。
+            制作：使用ps
+        </p>
+        <hr>
+        <h3>3.jd精灵图练习</h3>
+        <div class="sprite">
+            <ul>
+                <li class="item">
+                    <div class="itembox">
+                        <h5 class="duo">多</h5>
+                        <p>品类齐全，轻松购物</p>
+                    </div>                  
+                </li>
+                <li class="item">
+                    <div class="itembox">
+                        <h5 class="kuai">快</h5>
+                        <p>多仓直发，极速配送</p>
+                    </div>           
+                </li class="item">
+                <li class="item"> 
+                    <div class="itembox">
+                        <h5 class="hao">好</h5>
+                        <p>正品行货，精致服务</p>
+                    </div>
+
+                </li>
+                <li class="item">
+                    <div class="itembox">
+                        <h5 class="sheng">省</h5>
+                        <p>天天低价，畅选无忧</p>
+                    </div> 
+                </li>
+            </ul>
+        </div>
+        <h3>4.img元素，background-image属性，字体图标比较</h3>
+        <p>
+            img元素是HTML页面的重要组成部分，不能使用精灵图。
+            background-image属性是css属性起一个装饰的作用，要先加载css才能找到图片，能使用精灵图。 
+            iconfont字体图标，字体图标放大时不会失真
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</body>
+</html>

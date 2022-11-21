@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.html表格</title>
+    <style>
+        /* 表格常用样式 */
+        table{
+            
+            /* border-collapse: collapse; 将重合的边框合并*/
+            border-collapse: collapse;
+            border-spacing: 10px 10px;
+            /* margin: 0 auto;因为table元素是一个块元素所以居中显示也是这样设置 */
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            background:pink ;
+        }
+        table td{
+            text-align: center;
+            /* border: 1px solid royalblue;边框的宽度 边框的类型 边框的颜色*/
+            border: 1px solid royalblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>1.html表格：</h3>
+        <p>
+            html中使用table元素来表示展示一些格式化的数据,是一个块元素。
+            table就是告诉浏览器我是一个表格。
+            tr(table row)，表示表格的一行，一行就是一个tr。必须写在table元素里
+            td(table description)，表示表格一行里的一个单元格，必须写在tr元素中，有一个单元格就是一个td。td也是一个容器里面可以嵌套任意元素。
+            th(table head)，表示表格的表头内容位于表格的第一行，文本会居中加粗显示。和td是同级的。
+            即：th和td都用来定义表格的单元格。其中，th是标题单元格，td是数据单元格。
+            caption，表示表格的标题
+            单元格的合并：方向向右，向下。
+                向右就是跨列合并 列(column) colspan="合并个数"
+                向下就是跨行合并 行(row) rowspan="合并个数"
+        </p>
+        <!-- 表格 -->
+        <table>
+            <caption>这是一个表格</caption>
+            <tr>
+                <th>性别</th>
+                <th>年龄</th>
+            </tr>
+            <tr>
+                <td>张三</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>25</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
