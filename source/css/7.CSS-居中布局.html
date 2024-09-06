@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.css居中布局</title>
+    <style>
+        .content{
+            background-color: red;
+            color: azure;
+        }
+        .block{
+            background-color:green;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+        .inline-element {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>1、居中类型</h3>
+    <div>水平居中、垂直居中、水平垂直居中</div>
+
+    <h3>2、水平居中</h3>
+    <div class="inline-element">
+        <h4>行内元素水平居中</h4>
+        <span>对于块级元素内部的普通文本, 行内元素, 行内替换元素(img, input等), 行内块级元素水平居中。父元素设置text-align:center;都能实现水平居中。</span>
+    </div>
+    <div class="content"> 
+        <h4>块级元素水平居中</h4>
+        <p>
+            而对于块级元素, 则要自己定义margin:0 auto;属性就可以实现居中、即把左右外边距设为auto。
+            原理: 上下margin默认值都是零, 左右margin值为auto时浏览器会把剩余空间平分给左右外边距也就实现了居中显示了。
+        </p>
+    </div>
+
+    <h3>3、垂直居中</h3>
+    <div>
+        <h4>单行内联元素</h4>
+        <span>设置内联元素的高度 height 和行高 line-height 相等，从而使元素垂直居中。</span>
+    </div>
+
+</body>
+</html>

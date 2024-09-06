@@ -4,13 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>css经典布局</title>
+  <link rel="stylesheet" href="../../css/index.css">
 </head>
 <body>
-  <!-- 圣杯布局 -->
+  <!-- 双栏布局 -->
+  <h3>1、双栏布局</h3>
+  <div>
+    1、左边栏固定,右边栏自适应
+    2、左边栏自适应,右边栏固定
+    3、不定宽,自适应
+  </div>
+  <div class="float-margin">
+    <div class="left">left-定宽元素浮动，脱离文档流</div>
+    <div class="right">right-自适应元素为了不被遮挡，设置 margin 大于等于定宽元素宽度</div>
+  </div>
+  <!-- 三栏布局 -->
+  <h3>2、三栏布局</h3>
+  <div>
+    使用flex最快    
+    容器弹性布局 display: flex
+    两侧栏设置固定宽度 width
+    中间栏设置占主轴空间 flex: 1
+  </div>
   <div class="container clearfix">
     <div class="center"></div>
-    <div class="left"></div>
-    <div class="right"></div>
+    <div class="left1"></div>
+    <div class="right1"></div>
   </div>
 
   <!-- 双飞翼 -->

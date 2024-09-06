@@ -1,4 +1,4 @@
-# 1.Markdown学习
+# 一、Markdown学习
 ## 1.1 Markdown文字
 Markdown标题使用1-6个井号(#), 对应 1-6 级标题。
 //# 这是一级标题
@@ -56,7 +56,7 @@ ___
     fun();
 ```
 
-# 2.HTML学习
+# 二、HTML学习
 ## 2.1 HTML简介
 * [HTML简介](./source/html/1.HTML简介.html "HTML简介")
 ## 2.2 HTML基本语法
@@ -76,7 +76,7 @@ ___
 ## 2.9 HTML5-audio元素
 * [HTML5-audio元素](./source/html/9.HTML5-audio元素.html "HTML5-audio元素")
 
-# 3.CSS学习
+# 三、CSS学习
 ## 3.1 CSS-基础语法
 * [CSS-基础语法](./source/css/1.CSS-基础语法.html "CSS-基础语法")
 ## 3.2 CSS-元素类型
@@ -89,8 +89,8 @@ ___
 * [CSS-伪类和伪元素](./source/css/5.CSS-伪类和伪元素.html "CSS-伪类和伪元素")
 ## 3.6 CSS-盒子模型
 * [CSS-盒子模型](./source/css/6.CSS-盒子模型.html "CSS-盒子模型")
-## 3.7 CSS-水平居中
-* [CSS-水平居中](./source/css/7.CSS-水平居中.html "CSS-水平居中")
+## 3.7 CSS-居中布局
+* [CSS-居中布局](./source/css/7.CSS-居中布局.html "CSS-居中布局")
 ## 3.8 CSS-背景样式
 * [CSS-背景样式](./source/css/8.CSS-背景样式.html "CSS-背景样式")
 ## 3.9 CSS-定位样式
@@ -112,7 +112,7 @@ ___
 ## 3.17 CSS-定位练习
 * [CSS-定位练习](./source/css/17.CSS-定位练习.html "CSS-定位练习")
 
-# 4.静态页面项目结构
+# 四、静态页面项目结构
 -index.html 首页
 css 
    -normalize.css 浏览器重置样式
